@@ -106,16 +106,15 @@ void Robot::TeleopPeriodic() {
 	}else{
 	x = (oi->getJoystick1()->GetRawAxis(1) *.75);
 	}
-	if ((y > .1) or (y <-.1)){
+
 	y = ((oi->getJoystick1()->GetRawAxis(4))*.65);
-	}else{
-	0 = ((oi->getJoystick1()->GetRawAxis(4))*.65);
-	}
+
 
 	drive->robotDrive->ArcadeDrive(-x,-y,true);
 
+	if (oi->getJoystick2()->GetY() > .1 || oi->getJoystick2()->GetY() < -.1){
 	elevator->speedController1->Set((oi->getJoystick2()->GetY())*2,0);
-
+	}
 	int povValue = oi->getJoystick2()->GetPOV(0);
 //	unsigned int povValue1 = oi->getJoystick2()->GetPOV(1);
 
