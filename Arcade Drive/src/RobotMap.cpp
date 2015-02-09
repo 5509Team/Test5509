@@ -44,7 +44,7 @@ void RobotMap::init() {
 	driveRobotDrive = new RobotDrive(driveMotorLeftFront, driveMototLeftRear,
               driveMotorRightFront, driveMotorRightRear);
 	
-	driveRobotDrive->SetSafetyEnabled(true);
+	driveRobotDrive->SetSafetyEnabled(false);
         driveRobotDrive->SetExpiration(0.1);
         driveRobotDrive->SetSensitivity(0.5);
         driveRobotDrive->SetMaxOutput(1.0);
